@@ -1,0 +1,144 @@
+* {
+    margin: 0;
+    padding: 0;
+    -webkit-user-select: none;
+    user-select: none;
+    font-family: arial;
+    transition: ease-in-out 0.1s;
+    text-rendering: geometricPrecision;
+}
+
+.body-dark {
+    background-color: rgb(20, 20, 20);
+    color: white;
+}
+
+#dim {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    pointer-events: none;
+}
+
+#header {
+    display: flex;
+    justify-content: center;
+    height: 5vh;
+}
+
+#menu {
+    margin-top: 5px;
+}
+
+#dark-switch {
+    margin: auto;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    padding: 3px;
+    border-radius: 100%;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+#dark-switch img {
+    width: inherit;
+    height: inherit;
+}
+
+.ds-dark {
+    filter: invert(1);
+}
+
+#game {
+    display: flex;
+    height: 90vh;
+}
+
+#wrap {
+    margin: auto;
+}
+
+#ptab {
+    display: flex;
+    justify-content: space-between;
+    margin: 5px 0;
+}
+
+#ptab .main {
+    cursor: pointer;
+    text-decoration: underline;
+    padding: 5px;
+}
+
+#ptab .main:hover {
+    text-decoration: none;
+}
+
+#ptab div {
+    display: flex;
+    border-radius: 3px;
+}
+
+#ptab div p {
+    margin: auto;
+}
+
+#stat div {
+    margin: auto;
+    padding: 5px;
+}
+
+#reset {
+    padding: 2px 5px;
+    border: none;
+    background-color: #ff5555;
+    border-radius: 2px;
+    cursor: pointer;
+    transition: ease-in-out 0.1s;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+#reset:active {
+    scale: 0.9;
+}
+
+#ptab img {
+    width: 20px;
+}
+
+#stat {
+    margin: auto;
+}
+
+#stat div {
+    font-weight: bolder;
+}
+
+#gameCanvas {
+    background-image: url(./paper.jpg);
+    background-size: cover;
+    padding: 25px;
+}
+
+#footer {
+    height: 5vh;
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+    background-color: #ff5555;
+    display: flex;
+    color: black;
+    width: 50%;
+    margin: auto;
+    border-radius: 5px 5px 0 0;
+}
+
+#footer p {
+    margin: auto;
+}
+
+#footer a {
+    color: black;
+}
