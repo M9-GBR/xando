@@ -1,6 +1,6 @@
 import Game from "./objects/game.js"
 
-window.game = new Game()
+let game = new Game()
 
 let darkSwitch = document.getElementById('dark-switch'),
     img = document.querySelector('#dark-switch img'),
@@ -15,4 +15,10 @@ darkSwitch.addEventListener('click', () => {
     } else img.src = './svgs/sun.svg'
 
     pImg.forEach(elem => elem.classList.toggle('ds-dark'))
+})
+
+document.addEventListener('keydown', (ev) => {
+    if (ev.key == 'Escape') {
+        game.clear()
+    }
 })
