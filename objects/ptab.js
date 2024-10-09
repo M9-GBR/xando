@@ -20,6 +20,7 @@ export default class PTabUpdater {
     addListeners() {
         this.resetBtn.addEventListener('click', () => {
             this.game.clear()
+            this.game.playSound('click')
         })
 
         this.p1.addEventListener('click', () => {
@@ -35,6 +36,8 @@ export default class PTabUpdater {
 
             this.game.startGame()
             this.update()
+
+            this.game.playSound('click')
         })
 
         this.p2.addEventListener('click', () => {
@@ -50,6 +53,8 @@ export default class PTabUpdater {
 
             this.game.startGame()
             this.update()
+
+            this.game.playSound('click')
         })
     }
 

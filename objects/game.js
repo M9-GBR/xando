@@ -39,6 +39,11 @@ export default class Game {
     animFrame
     compTimer
 
+    xSlash = new Audio('./audio/xSlash.mp3')
+    oDraw = new Audio('./audio/oWrite.mp3')
+    winLineDraw = new Audio('./audio/winLine.mp3')
+    click = new Audio('./audio/click.wav')
+
     startGame() {
         if (this.currentPlayer.__proto__.constructor.name == 'Computer') {
             this.currentPlayer.play()
@@ -56,9 +61,7 @@ export default class Game {
             } else {
                 this.p2Score++
             }
-        } else if (this.checkDraw()) {
-            this.drawFunc()
-        } else {
+        } else if (!this.checkDraw()) {
             if (this.currentPlayer == this.player1) {
                 this.setCurrentPlayer(2)
             } else this.setCurrentPlayer(1)
@@ -209,6 +212,7 @@ export default class Game {
             } else {
                 animX = endX, animY = startY
                 xAnimate2()
+                game.playSound('xSlash')
             }
         }
 
@@ -228,6 +232,7 @@ export default class Game {
         }
 
         xAnimate1()
+        this.playSound('xSlash')
     }
 
     drawO(x, y, ctx = new CanvasRenderingContext2D()) {
@@ -252,6 +257,8 @@ export default class Game {
         }
 
         oAnimate()
+
+        this.playSound('oDraw')
     }
 
     checkWinner() {
@@ -264,14 +271,6 @@ export default class Game {
 
     checkDraw() {
         return this.boardArr.every(char => char != "")
-    }
-
-    winFunc() {
-
-    }
-
-    drawFunc() {
-
     }
 
     drawWinLine() {
@@ -336,10 +335,13 @@ export default class Game {
 
             if (!(animX >= x2 && animY >= y2)) {
                 game.animFrame = requestAnimationFrame(animate)
-            } else game.winFunc()
+            }
         }
 
         animate()
+
+        this.winLineDraw.currentTime = 0.5
+        this.winLineDraw.play()
     }
 
     clearAnimFrames() {
@@ -383,5 +385,11 @@ export default class Game {
     setCurrentPlayer(num) {
         this.currentPlayer = this[`player${num}`]
         this.cP = this.currentPlayer
+    }
+
+    playSound(name, startTime = 0) {
+        let audio = this[name]
+        audio.currentTime = startTime
+        audio.play()
     }
 }

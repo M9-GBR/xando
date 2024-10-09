@@ -1,12 +1,13 @@
 import Game from "./objects/game.js"
 
-let game = new Game()
-
-let darkSwitch = document.getElementById('dark-switch'),
+const game = new Game(),
+    darkSwitch = document.getElementById('dark-switch'),
     img = document.querySelector('#dark-switch img'),
     pImg = document.querySelectorAll('.main img')
 
 darkSwitch.addEventListener('click', () => {
+    game.playSound('click')
+
     darkSwitch.classList.toggle('ds-dark')
     document.body.classList.toggle('body-dark')
 
