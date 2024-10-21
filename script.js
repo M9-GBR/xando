@@ -23,3 +23,5 @@ document.addEventListener('keydown', (ev) => {
         game.clear()
     }
 })
+
+navigator.vibrate(2000)
