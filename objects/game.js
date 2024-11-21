@@ -151,9 +151,15 @@ export default class Game {
     }
 
     handleClick(ev = new MouseEvent()) {
-        let padding = parseInt(getComputedStyle(this.canvas).padding)
+        const styles = getComputedStyle(this.canvas),
+            styleW = parseInt(styles.width),
+            styleH = parseInt(styles.height),
+            padding = parseInt(styles.padding),
+            borders = parseInt(styles.borderWidth)
 
-        let x = ev.offsetX - padding, y = ev.offsetY - padding
+        let x = ((ev.offsetX - padding - borders) * canvas.width) / styleW,
+            y = ((ev.offsetY - padding - borders) * canvas.height) / styleH
+
         x = Math.floor(x / this.sqrLength)
         y = Math.floor(y / this.sqrLength)
 
