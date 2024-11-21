@@ -4,8 +4,15 @@
     -webkit-user-select: none;
     user-select: none;
     font-family: arial;
-    transition: ease-in-out 0.1s;
+    transition: 0.05s ease-in-out;
     text-rendering: geometricPrecision;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .body-dark {
@@ -24,7 +31,6 @@
 #header {
     display: flex;
     justify-content: center;
-    height: 5vh;
 }
 
 #menu {
@@ -52,7 +58,6 @@
 
 #game {
     display: flex;
-    height: 90vh;
 }
 
 #wrap {
@@ -82,6 +87,7 @@
 
 #ptab div p {
     margin: auto;
+
 }
 
 #stat div {
@@ -119,11 +125,12 @@
 #gameCanvas {
     background-image: url(./paper.jpg);
     background-size: cover;
-    padding: 25px;
+    padding: 3vw;
+    width: 300px;
+    max-width: 100vw;
 }
 
 #footer {
-    height: 5vh;
     text-align: center;
     font-weight: bold;
     font-size: 20px;
@@ -131,8 +138,9 @@
     display: flex;
     color: black;
     width: 50%;
-    margin: auto;
+    margin: 0 auto;
     border-radius: 5px 5px 0 0;
+    padding: 5px;
 }
 
 #footer p {
