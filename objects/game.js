@@ -157,8 +157,8 @@ export default class Game {
             padding = parseInt(styles.padding),
             borders = parseInt(styles.borderWidth)
 
-        let x = ((ev.offsetX - padding - borders) * canvas.width) / styleW,
-            y = ((ev.offsetY - padding - borders) * canvas.height) / styleH
+        let x = ((ev.offsetX - padding - borders) * this.canvas.width) / styleW,
+            y = ((ev.offsetY - padding - borders) * this.canvas.height) / styleH
 
         x = Math.floor(x / this.sqrLength)
         y = Math.floor(y / this.sqrLength)
